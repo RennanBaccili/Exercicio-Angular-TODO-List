@@ -17,10 +17,11 @@ export class TodoListComponent implements DoCheck {
       this.setLocalStorage();
   }
 
-
+  //deleção item
   public deletemItemTesk(event:number){
     this.taskList.splice(event,1)
   }
+  //area de confirmação
   public deleteAllList(){
     const confirme = window.confirm("Voce deseja realmente deletar tudo")
     if(confirme){
@@ -32,6 +33,7 @@ export class TodoListComponent implements DoCheck {
   }
 
   public setLocalStorage(){
+    //para organizar lista checados e não chacados
     if(this.taskList){
       this.taskList.sort((first,last)=>Number(first.checked) - Number(last.checked));
       //para salvar itens no localStorage
